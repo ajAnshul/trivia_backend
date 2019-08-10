@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+</style>
+</head>
+<body>
+
+<div class="topnav">
+  <input id="search-input" type="text" placeholder="Search..">
+  <button onclick="myFunction()">Search</button>
+  <p id="demo"></p>
+</div>
+
+<script>
+function myFunction() {
+  let text = document.getElementById('search-input').value;
+  console.log("got text ", text);
+  document.getElementById("demo").innerHTML = text;
+  let api_key = 'AIzaSyAssjTQErTzm9UMpBPwP3K7gMBKMjjog-k';
+  let cx = '001013610542069346626:zsnxsnyxcvy'
+  let searchText = 'where is the lincoln memorial located'
+  let url = "https://www.googleapis.com/customsearch/v1?key="+api_key+ "&cx="+ cx +"&q="+searchText;
+  console.log("got url is ", url);
+  console.log("asyncis ", fetch);
+  fetch(url, {
+    mode: 'no-cors',
+    method: 'GET',
+    dataType: 'jsonp',
+    // body: myBody, // string or object
+    headers:{
+      'Content-Type': 'application/json'
+    }
+  })
+  .then((res)=>{
+    console.log("now res ", res);
+  })
+  .catch((error)=>{
+    console.log("error is ", error);
+  })
+}
+
+</script>
+</body>
+</html>
