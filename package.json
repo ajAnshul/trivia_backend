@@ -17,7 +17,7 @@
     "gm": "^1.23.1",
     "image-clipper": "^0.4.3",
     "screenshot-desktop": "^1.6.0",
-    "tesseract.js": "^1.0.14",
+    "tesseract.js": "^1.0.19",
     "tesseract.ts": "^1.1.1"
   }
 }
